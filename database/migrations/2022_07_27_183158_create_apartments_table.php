@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Schema;
 class CreateApartmentsTable extends Migration
 {
     /**
+     * The database connection that should be used by the migration.
+     *
+     * @var string
+     */
+    protected $connection = 'pgsql';
+
+    /**
      * Run the migrations.
      *
      * @return void
@@ -15,7 +22,13 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
+            $table->string('apartment_code');
+            $table->string('flat_code');
+            $table->string('tower_code');
+            $table->foreignId('status_id');
+            $table->foreignId('type_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
