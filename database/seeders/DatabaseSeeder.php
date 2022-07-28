@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             StatusSeeder::class,
+            TypeSeeder::class,
             ApartmentSeeder::class,
         ]);
     }
