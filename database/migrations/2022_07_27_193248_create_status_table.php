@@ -18,7 +18,7 @@ class CreateStatusTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('status_code')->nullable();
-            $table->string('module')->nullable();
+            $table->string('module');
             $table->string('icon')->nullable();
             $table->string('color')->nullable();
             $table->timestamps();

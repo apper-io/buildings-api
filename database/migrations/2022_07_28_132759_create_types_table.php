@@ -18,8 +18,8 @@ class CreateTypesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('type_code')->nullable();
-            $table->foreignId('status_id')->nullable();
-            $table->string('module')->nullable();
+            $table->foreignId('status_id');
+            $table->string('module');
             $table->string('icon')->nullable();
             $table->string('color')->nullable();
             $table->timestamps();

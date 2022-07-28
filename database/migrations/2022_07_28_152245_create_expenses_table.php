@@ -20,6 +20,7 @@ class CreateExpensesTable extends Migration
             $table->foreignId('status_id');
             $table->foreignId('type_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

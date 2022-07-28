@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBillsTable extends Migration
+class CreatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateBillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bills', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('bill_code');
-            $table->string('month_year_code');
+            $table->foreignId('apartment_id');
+            $table->foreignId('bill_id');
             $table->float('amount', 8, 2);
             $table->foreignId('status_id');
             $table->foreignId('type_id');
@@ -32,6 +32,6 @@ class CreateBillsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bills');
+        Schema::dropIfExists('payments');
     }
 }
