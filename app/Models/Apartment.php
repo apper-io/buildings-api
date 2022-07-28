@@ -41,12 +41,12 @@ class Apartment extends Model
 
     public function status()
     {
-        //return $this->belongsTo(Status::class, 'id_status');
+        return $this->belongsTo(Status::class, 'status_id');
     }
 
     public function type()
     {
-        //return $this->belongsTo(Type::class, 'id_type');
+        //return $this->belongsTo(Type::class, 'type_id');
     }
 
 }
